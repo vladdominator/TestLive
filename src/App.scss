@@ -1,0 +1,56 @@
+@mixin paragraph {
+  color: #3284ff;
+  padding: 0;
+  margin: 0;
+  font-weight: 500;
+  font-size: 25px;
+}
+.main-content {
+  padding: 40px 20px;
+  &__text {
+    font-size: 35px;
+    font-weight: 600;
+  }
+}
+.container__sources {
+  padding: 20px 0 0 0;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.source__button {
+  background: inherit;
+  border: 1px gray dashed;
+  width: 300px;
+  height: 70px;
+  border-radius: 7px;
+  p {
+    @include paragraph;
+  }
+}
+
+.item__source {
+  border: 1px gray solid;
+  border-radius: 7px;
+  min-width: 300px;
+  min-height: 70px;
+  padding: 0 16px;
+  p {
+    @include paragraph;
+    font-size: 20px;
+    margin-top: 10px;
+    color: #000;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .source__button {
+    width: 100%;
+  }
+  .container__sources {
+    flex-direction: column;
+  }
+  .item__source {
+    min-width: 100%;
+  }
+}
